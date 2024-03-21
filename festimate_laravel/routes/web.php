@@ -13,3 +13,8 @@ Route::get('/presents', function () {
     $presents = DB::select('SELECT * FROM presents');
     return response()->json($presents);
 });
+
+Route::get('/users', function () {
+    $users = DB::select('SELECT * FROM users');
+    return response()->json($users);
+});
