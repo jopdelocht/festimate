@@ -12,7 +12,15 @@ export class UserService {
 
 
   // Put Users API Endpoint URL in constant
-  userURL: string = 'http://localhost:8000/users/';
+  userURL: string = 'http://localhost:8000/users';
+
+  // get users
+  async getUsers() {
+    const response = await fetch(this.userURL);
+    const users = await response.json();
+    // console.log(users)
+    return users;
+  }
 
   // User register method => Hashing on backend
   async register(username: any, password: any, email: any) {
@@ -24,7 +32,8 @@ export class UserService {
         name: username,
         password: password,
         email: email
-      };
+      }
+      console.log(user);
       const result = await fetch(this.userURL, {
         method: 'POST',
         headers: {
@@ -43,13 +52,7 @@ export class UserService {
     }
   }
 
-  // get users
-  async getUsers() {
-    const response = await fetch(this.userURL);
-    const users = await response.json();
-    // console.log(users)
-    return users;
-  }
+
 
   // Login method to return token
   async login(username: string, password: string) {
