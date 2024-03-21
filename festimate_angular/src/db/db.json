@@ -1,0 +1,24 @@
+{
+    "users": [
+        {
+            "id": 1,
+            "username": "John Doe",
+            "password": "$2a$10$jNARe3yggkdP0PYEBcmIz.4JOzfe1yHALSqcnpjBUfg14JV6a7pGi"
+        },
+        {
+            "id": 2,
+            "username": "Alex Vargas",
+            "password": "$2a$10$jNARe3yggkdP0PYEBcmIz.4JOzfe1yHALSqcnpjBUfg14JV6a7pGi"
+        },
+        {
+            "id": 3,
+            "username": "Frodo Baggins",
+            "password": "$2a$10$jNARe3yggkdP0PYEBcmIz.4JOzfe1yHALSqcnpjBUfg14JV6a7pGi"
+        },
+        {
+            "id": 4,
+            "username": "Samwise Gamgee",
+            "password": "$2a$10$jNARe3yggkdP0PYEBcmIz.4JOzfe1yHALSqcnpjBUfg14JV6a7pGi"
+        }
+    ]
+}
