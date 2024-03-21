@@ -1,3 +1,6 @@
-@for(user of users; track user.id){
-<li>{{user.name}}</li>
-}
+<div *ngIf="isLoggedIn">
+    <h1>Welkom terug, {{username}}</h1>
+</div>
+<div *ngIf="!isLoggedIn">
+    <h1>Welkom bij Festimate</h1>
+</div>

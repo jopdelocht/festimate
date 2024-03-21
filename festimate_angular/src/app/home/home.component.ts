@@ -1,8 +1,6 @@
-import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
-import { UserService } from '../shared/user.service';
-import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-home',
@@ -12,20 +10,14 @@ import { ToastrService } from 'ngx-toastr';
   styleUrl: './home.component.css'
 })
 export class HomeComponent {
-
-  constructor(private UserService: UserService, private toastr: ToastrService) { }
-
-  users: any[] = [];
-
+  username: string | null | undefined;
+  isLoggedIn: boolean = false;
   ngOnInit() {
-    this.toastr.success('Welcome to the Angular App', 'Success!');
-    this.UserService.getUsers().then(data => {
-      this.users = data
-      console.log(this.users)
-    }).catch(error => console.log(error)
-    )
+    if (localStorage.getItem('username')) {
+      this.username = localStorage.getItem('username');
+    }
+    if (localStorage.getItem('token')) {
+      this.isLoggedIn = true
+    }
   }
-
-
-
 }
