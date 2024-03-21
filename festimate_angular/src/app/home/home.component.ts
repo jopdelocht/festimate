@@ -21,6 +21,7 @@ export class HomeComponent {
     this.toastr.success('Welcome to the Angular App', 'Success!');
     this.UserService.getUsers().then(data => {
       this.users = data
+      console.log(this.users)
     }).catch(error => console.log(error)
     )
   }
