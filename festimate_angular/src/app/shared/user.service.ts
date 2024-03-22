@@ -2,17 +2,18 @@ import { Injectable } from '@angular/core';
 import * as bcrypt from 'bcryptjs';
 import { Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
+import { HttpClient } from '@angular/common/http'; // Import HttpClient
 
 @Injectable({
   providedIn: 'root'
 })
 
 export class UserService {
-  constructor(private router: Router, private toastr: ToastrService) { }
+  constructor(private router: Router, private toastr: ToastrService, private http: HttpClient) { }
 
 
   // Put Users API Endpoint URL in constant
-  userURL: string = 'http://localhost:8000/users';
+  userURL: string = 'http://localhost:8000/users/';
 
   // get users
   async getUsers() {
@@ -34,7 +35,9 @@ export class UserService {
         email: email
       }
       console.log(user);
+
       const result = await fetch(this.userURL, {
+
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'
